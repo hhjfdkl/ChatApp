@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Configuration>
+    <!--Appenders determine what the output is. First is console (console.log) but we can also do files-->
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <!--
+                Make the logger more readable with PatternLayout
+                Numbers next to percentages are measured in characters to increase space by
+                Curly braces are for reformatting output. Second curly braces cut down the word
+            -->
+            <PatternLayout pattern="%d{yyyy-MMM-dd HH:mm:ss} [%t] %-5level %-50c{1.} - %msg%n"/>
+        </Console>
+
+        <File name="File" fileName="logs/ChatApp.log">
+            <PatternLayout pattern="%d [%t] %-5level %-50c{1.} - %msg%n"/>
+        </File>
+    </Appenders>
+    <!--This designates our logger(s)-->
+    <Loggers>
+
+        <!--<Logger name="" level="warn" additivity="false">
+
+        </Logger>-->
+
+        <Root level="info">
+            <!--AppenderRef references the names defined above-->
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>

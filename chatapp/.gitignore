@@ -4,6 +4,7 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 test-app-GITIGNORETHIS.sh
+*.log
 
 ### STS ###
 .apt_generated
