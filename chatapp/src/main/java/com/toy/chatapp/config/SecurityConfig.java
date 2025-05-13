@@ -37,26 +37,6 @@ public class SecurityConfig {
 
     }
 
-/*
-    //TODO : Create a class which implements UserDetailsService
-    //This will be used for our login users
-    @Bean
-    public UserDetailsService userDetailsService(){
-
-        //this is a test user - this builder will be replaced with whatever is in our database once we flesh that out.
-        UserDetails user1 = User
-                .withDefaultPasswordEncoder()   //don't use this - it's deprecated and not proper hashing for storage
-                .username("user1")
-                .password("password")
-                .roles("USER")
-                .build();
-
-
-        //This is a test user - similar to H2 for database
-        return new InMemoryUserDetailsManager(user1);
-    }
-*/
-
     //Bean to change our Authentication Provider - we don't want to use Spring's default since we want to use a SQL db
     @Bean
     public AuthenticationProvider authenticationProvider() {
